@@ -1,4 +1,4 @@
-class CreateRestaurantEntries < ActiveRecord::Migration
+class RestuarantReviews < ActiveRecord::Migration[6.1]
   def change
     create_table :restaurant_entries do |t|
       t.string :content
@@ -6,5 +6,6 @@ class CreateRestaurantEntries < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+
   end
 end

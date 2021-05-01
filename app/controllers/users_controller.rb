@@ -13,7 +13,6 @@ class UsersController < ApplicationController
             redirect "/users/#{@user.id}"
         else
             redirect '/signup'
-
         end
     end
 
@@ -41,5 +40,4 @@ class UsersController < ApplicationController
         session.clear
         redirect '/'
     end
-
 end 

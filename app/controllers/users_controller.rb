@@ -1,18 +1,19 @@
 class UsersController < ApplicationController
 
-    get '/register' do
-        erb :'users/new.html'
+    get '/signup' do
+        erb :'users/signup.html'
     end
 
     post '/users' do
-        @user = User.new
-        @user.email = params[:email]
-        @user.password = params[:password]
 
-        if @user.save
-            redirect "/"
+        if params[:name] != "" && params[:email] != "" && params[:password] != "" 
+        
+            @user = User.create[params]
+            session[:user_id] = @user.id
+            redirect "/users/#{@user.id}"
         else
-            erb :'users/new.html'
+            redirect '/signup'
+
         end
     end
 
@@ -31,8 +32,14 @@ class UsersController < ApplicationController
     end
 
     get '/users/:id' do
-        "This will be the user show route"
-        
+        @user = User.find_by(id: params[:id])
+         
+        erb :'users/show'
+    end
+
+    get  '/logout' do
+        session.clear
+        redirect '/'
     end
 
 end 

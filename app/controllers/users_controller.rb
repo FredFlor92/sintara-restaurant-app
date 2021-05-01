@@ -21,13 +21,18 @@ class UsersController < ApplicationController
     end
 
     post '/login' do
-        @user = User.find_by(:email => params[:email])
-        if @user && @user.authenticate(params[:password])
+        @user = User.find_by(email: params[:email])
+        if @user.authenticate(params[:password])
             session[:user_id] = @user.id
-            redirect "/"
+            redirect "/users/#{@user.id}"
         else
         erb :'users/login.html' 
         end  
+    end
+
+    get '/users/:id' do
+        "This will be the user show route"
+        
     end
 
 end 

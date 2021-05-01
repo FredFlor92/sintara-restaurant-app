@@ -46,6 +46,7 @@ GEM
     minitest (5.14.4)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
+    nio4r (2.5.7)
     nokogiri (1.11.3)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
@@ -53,6 +54,8 @@ GEM
       coderay (~> 1.1)
       method_source (~> 1.0)
     public_suffix (4.0.6)
+    puma (5.2.2)
+      nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
     rack-protection (2.1.0)
@@ -116,6 +119,7 @@ DEPENDENCIES
   capybara
   database_cleaner!
   pry
+  puma
   rack-test
   rake
   require_all

@@ -1,1 +1,8 @@
-INDEX PAGE FOR ENTRIES
+All Restaurant Reviews
+
+<% @restaurant_entries.each do |restaurant_entry| %>
+    <h4><a href="/restaurant_entries/<% restaurant_entry.id %>"><%=restaurant_entry.created_at %></a></h4>
+    <p><%= restaurant_entry.content %></p>
+    <p>By <% restaurant_entry.user.name %></p>%
+    <br><br>
+<% end %>

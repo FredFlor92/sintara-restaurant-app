@@ -2,7 +2,7 @@ SHOW PAGE FOR NEW ENTRY
 
 <p><%= @restaurant_entry.content %></p>
 
-Edit link
+<% if authorized_to_edit?(@restaurant_entry)%>
 <a href="restaurant_entries/<%= @restaurant_entry.id%>/edit">Edit Entry</a>
 
 Delete link

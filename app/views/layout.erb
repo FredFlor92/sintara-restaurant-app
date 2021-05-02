@@ -16,9 +16,11 @@
   <body>
 
     <div class="nav">
-      <a href="/logout">Logout</a>
-      <a href="/restaurant_entries">Restaurant Review's</a>
-      <a href="/restaurant_entries/new">New Restaurant Review's</a>
+      <% if logged_in? %>
+        <a href="/logout">Logout</a>
+        <a href="/restaurant_entries">Restaurant Review's</a>
+        <a href="/restaurant_entries/new">New Restaurant Review's</a>
+        <% end %>
     <div>
 
     <div class="wrapper">

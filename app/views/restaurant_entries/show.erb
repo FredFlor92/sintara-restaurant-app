@@ -1,8 +1,12 @@
-SHOW PAGE FOR NEW ENTRY
+NEW ENTRIE'S!
 
 <p><%= @restaurant_entry.content %></p>
 
 <% if authorized_to_edit?(@restaurant_entry)%>
-<a href="restaurant_entries/<%= @restaurant_entry.id%>/edit">Edit Entry</a>
-
-Delete link
+<a href="restaurant_entries/<%= @restaurant_entry.id %>/edit">Edit Entry</a>
+<br><br>
+<form class="" action="/restaurant_entries/<%%= @restaurant_entry.id %>" method="post">
+<input type="hidden" name="_method" value="DELETE">
+<input type="submit" name="" value="Delete this Entry">
+</form>
+<% end %>
